@@ -33,13 +33,13 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView1"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/toolbarRegister"
-        android:layout_marginTop="@dimen/dim_20_dp"
-        android:layout_marginStart="@dimen/dim_20_dp"
-        android:layout_marginEnd="@dimen/dim_20_dp"
+        android:layout_marginTop="@dimen/dim_40_dp"
+        android:layout_marginStart="@dimen/dim_12_dp"
+        android:layout_marginEnd="@dimen/dim_12_dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_card_home"/>

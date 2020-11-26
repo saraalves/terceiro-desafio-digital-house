@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelhq.R
 import com.example.marvelhq.model.PersonagemModel
 
-class PersonagemAdapter (private val dataSet: List<PersonagemModel>) :
+class PersonagemAdapter(private val dataSet: MutableList<PersonagemModel>) :
     RecyclerView.Adapter<PersonagemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonagemViewHolder {
         val view =
@@ -18,6 +18,9 @@ class PersonagemAdapter (private val dataSet: List<PersonagemModel>) :
 
 
     override fun onBindViewHolder(holder: PersonagemViewHolder, position: Int) {
-        holder.bind(dataSet[position])
+        val item = dataSet[position]
+        holder.bind(item)
+
+        holder.itemView.setOnClickListener { item }
     }
 }

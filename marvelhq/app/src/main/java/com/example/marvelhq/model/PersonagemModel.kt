@@ -6,5 +6,5 @@ data class PersonagemModel (
     @SerializedName("id")
     val idPersonagem: String,
     @SerializedName("images")
-    val img: String
+    val img: Int
 )
