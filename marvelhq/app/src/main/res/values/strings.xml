@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MarvelHQ</string>
+    <string name="log_in">LOG IN</string>
+    <string name="save">SAVE</string>
+    <string name="remember">Remember</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="welcome_marvel_hq">Welcome to the Marvel HQ\'s</string>
+    <string name="create_account">Create account</string>
+    <string name="register">Register</string>
+</resources>
