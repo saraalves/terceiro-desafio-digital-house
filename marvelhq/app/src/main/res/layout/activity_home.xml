@@ -4,6 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDarkBlue"
     tools:context=".home.HomeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbarRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBarRegister"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/marvel_logo"
+                android:scaleType="fitStart"
+                android:layout_marginStart="@dimen/dim_20_dp"/>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRegister"
+        android:layout_marginTop="@dimen/dim_20_dp"
+        android:layout_marginStart="@dimen/dim_20_dp"
+        android:layout_marginEnd="@dimen/dim_20_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_card_home"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

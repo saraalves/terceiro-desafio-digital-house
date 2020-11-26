@@ -9,11 +9,14 @@
     <dimen name="dim_30_dp">30dp</dimen>
     <dimen name="dim_26_dp">26dp</dimen>
     <dimen name="dim_22_dp">22dp</dimen>
+    <dimen name="dim_20_dp">20dp</dimen>
     <dimen name="dim_18_dp">18dp</dimen>
     <dimen name="dim_16_dp">16dp</dimen>
     <dimen name="dim_15_dp">15dp</dimen>
+    <dimen name="dim_12_dp">12dp</dimen>
     <dimen name="dim_8_dp">8dp</dimen>
     <dimen name="dim_4_dp">4dp</dimen>
+    <dimen name="dim_2_dp">2dp</dimen>
 
 <!--    Dimens sp -->
     <dimen name="dim_36_sp">36sp</dimen>
