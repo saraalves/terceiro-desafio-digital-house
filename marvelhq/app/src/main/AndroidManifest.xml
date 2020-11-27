@@ -11,11 +11,10 @@
         android:roundIcon="@drawable/background"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home.HomeActivity">
-
-        </activity>
-        <activity android:name=".register.RegisterActivity"/>
-        <activity android:name=".login.LoginActivity"/>
+        <activity android:name=".detalhes.DetalhesActivity"></activity>
+        <activity android:name=".home.HomeActivity"></activity>
+        <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
