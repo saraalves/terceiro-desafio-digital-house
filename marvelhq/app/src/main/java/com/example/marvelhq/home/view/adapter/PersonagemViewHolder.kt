@@ -5,7 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelhq.R
-import com.example.marvelhq.model.PersonagemModel
+import com.example.marvelhq.model.ComicsModel
 import com.squareup.picasso.Picasso
 
 class PersonagemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
@@ -13,7 +13,7 @@ class PersonagemViewHolder(private val view: View) : RecyclerView.ViewHolder(vie
     private val imagem = view.findViewById<ImageView>(R.id.imagePersonagem)
     private val idPersonagem = view.findViewById<TextView>(R.id.txtPersonagem)
 
-    fun bind(personagemModel: PersonagemModel) {
+    fun bind(personagemModel: ComicsModel) {
         idPersonagem.text = personagemModel.idPersonagem
 
         Picasso.get()

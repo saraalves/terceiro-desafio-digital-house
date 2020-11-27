@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelhq.R
-import com.example.marvelhq.model.PersonagemModel
+import com.example.marvelhq.model.ComicsModel
 
-class PersonagemAdapter(private val dataSet: MutableList<PersonagemModel>) :
+class PersonagemAdapter(private val dataSet: MutableList<ComicsModel>) :
     RecyclerView.Adapter<PersonagemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonagemViewHolder {
         val view =

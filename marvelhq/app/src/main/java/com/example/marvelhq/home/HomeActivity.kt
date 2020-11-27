@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelhq.R
 import com.example.marvelhq.home.view.adapter.PersonagemAdapter
-import com.example.marvelhq.model.PersonagemModel
+import com.example.marvelhq.model.ComicsModel
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,61 +29,61 @@ class HomeActivity : AppCompatActivity() {
     private fun adapterPersonagem(): PersonagemAdapter {
         val mock = PersonagemAdapter(
             arrayListOf(
-                PersonagemModel(
+                ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
-                ), PersonagemModel(
+                ), ComicsModel(
                     "#96",
                     R.drawable.image_homem_aranha
                 )
