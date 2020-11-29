@@ -37,6 +37,8 @@
             android:layout_height="200dp"
             android:layout_marginTop="84dp"
             android:scaleType="fitXY"
+            android:background="@color/colorWhite"
+            android:padding="4dp"
             android:src="@drawable/spiderman_mini"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="@dimen/dim_20_dp"
