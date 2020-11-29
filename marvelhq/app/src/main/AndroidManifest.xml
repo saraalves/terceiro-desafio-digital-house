@@ -11,8 +11,9 @@
         android:roundIcon="@drawable/background"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".detalhes.DetalhesActivity"></activity>
-        <activity android:name=".home.view.activity.HomeActivity"></activity>
+        <activity android:name=".detalhes.ImageFullActivity"/>
+        <activity android:name=".detalhes.DetalhesActivity" />
+        <activity android:name=".home.view.activity.HomeActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".splash.SplashActivity">
