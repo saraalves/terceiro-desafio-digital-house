@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.marvelhq.R
-import com.example.marvelhq.home.HomeActivity
+import com.example.marvelhq.home.view.activity.HomeActivity
 import com.example.marvelhq.register.RegisterActivity
 import com.google.android.material.button.MaterialButton
 

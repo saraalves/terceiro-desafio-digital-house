@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".detalhes.DetalhesActivity"></activity>
-        <activity android:name=".home.HomeActivity"></activity>
+        <activity android:name=".home.view.activity.HomeActivity"></activity>
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".splash.SplashActivity">

@@ -1,9 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDarkBlue"
     tools:context=".detalhes.DetalhesActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarDetalhes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back_24" />
+
+        <ImageView
+            android:id="@+id/imageFullDetalhes"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/spiderman_detalhes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageMiniDetalhes"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="84dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/spiderman_mini"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/dim_20_dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTitleDetalhes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/dim_20_dp"
+            android:textSize="@dimen/dim_24_sp"
+            android:layout_marginEnd="@dimen/dim_20_dp"
+            android:layout_marginTop="@dimen/dim_20_dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageMiniDetalhes"
+            android:textColor="@color/colorWhite"
+            android:text="AMAZING APIDER-MAN (2014) # 1 (MHAN VARIANT)"/>
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="@dimen/dim_20_dp"
+            android:layout_marginEnd="@dimen/dim_20_dp"
+            android:layout_marginTop="@dimen/dim_20_dp"
+            android:text="This file contains additional information such as Exif metadata which may have been added by the digital camera, scanner, or software program used to create or digitize it. If the file has been modified from its original state, some details such as the timestamp may not fully reflect those of the original file. The timestamp is only as accurate as the clock in the camera, and it may be completely wrong."
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleDetalhes"/>
+
+        <TextView
+            android:id="@+id/txtPublished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dim_20_dp"
+            android:layout_marginStart="@dimen/dim_20_dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@id/txtDescription"
+            android:text="Published: "/>
+
+
+        <TextView
+            android:id="@+id/txtDataPublicacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txtPublished"
+            android:layout_marginEnd="@dimen/dim_20_dp"
+            android:layout_marginTop="@dimen/dim_20_dp"
+            android:layout_marginStart="@dimen/dim_8_dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@id/txtDescription"
+            tools:text="April 30, 2014"/>
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dim_20_dp"
+            android:layout_marginStart="@dimen/dim_20_dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@id/txtPublished"
+            android:text="Price: "/>
+
+
+        <TextView
+            android:id="@+id/txtPriceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txtPublished"
+            android:layout_marginTop="@dimen/dim_20_dp"
+            android:layout_marginStart="@dimen/dim_8_dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@id/txtPublished"
+            tools:text="$ 5,99"/>
+
+        <TextView
+            android:id="@+id/txtPages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dim_20_dp"
+            android:layout_marginStart="@dimen/dim_20_dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@id/txtPrice"
+            android:text="Pages: "/>
+
+
+        <TextView
+            android:id="@+id/txtPagesValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txtPublished"
+            android:layout_marginTop="@dimen/dim_20_dp"
+            android:layout_marginStart="@dimen/dim_8_dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@id/txtPrice"
+            tools:text="38"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
