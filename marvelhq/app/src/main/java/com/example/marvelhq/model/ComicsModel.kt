@@ -14,11 +14,11 @@ data class ComicsModel (
     @SerializedName("pageCount")
     val paginacao: Int,
     @SerializedName("dates")
-    val datas: List<DatasModel>,
+    val datas: List<DatesModel>,
     @SerializedName("prices")
     val precos: List<PrecosModel>,
     @SerializedName("thumbnail")
-    val miniatura: List<MiniaturaModel>,
+    val thumbnail: ThumbnailModel?,
     @SerializedName("images")
     val imagem: List<ImagemModel>
 

@@ -28,8 +28,7 @@ class ComicsViewModel(val _repository: MarvelRepository) : ViewModel() {
 
         _comicsList = response.data.results
         emit(response.data.results)
-
-
+        
     }
 
     fun nextPage() = liveData(Dispatchers.IO) {
