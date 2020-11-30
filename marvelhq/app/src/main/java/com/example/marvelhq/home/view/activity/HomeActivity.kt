@@ -36,8 +36,14 @@ class HomeActivity : AppCompatActivity() {
         _comics = mutableListOf<ComicsModel>()
         _listAdapter = PersonagemAdapter(_comics) {
             val intent = Intent(this@HomeActivity, DetalhesActivity::class.java)
-//            intent.putExtra("COMICS_ID", it.id)
-//            intent.putExtra("COMICS_DESCRIPTION", it.descricao)
+            intent.putExtra("COMICS_ID", it.id)
+            intent.putExtra("COMICS_DESCRIPTION", it.descricao)
+            intent.putExtra("COMICS_TITLE", it.titulo)
+            intent.putExtra("COMICS_PAGES", it.paginacao)
+            intent.putExtra("COMICS_EDITION", it.numeroEdicao)
+            intent.putExtra("COMICS_IMAGEM", it.imagem.size)
+            intent.putExtra("COMICS_THUMBNAIL", it.thumbnail?.getImagePath())
+            intent.putExtra("COMICS_PRECO", it.precos.lastIndex)
             startActivity(intent)
         }
 
