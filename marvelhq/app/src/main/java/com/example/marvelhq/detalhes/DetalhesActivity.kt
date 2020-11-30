@@ -19,8 +19,6 @@ import kotlinx.android.synthetic.main.activity_detalhes.view.*
 class DetalhesActivity : AppCompatActivity() {
 
     private lateinit var _viewModel: ComicsViewModel
-    private lateinit var _listAdapter: PersonagemAdapter
-    private var _comics = mutableListOf<ComicsModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
