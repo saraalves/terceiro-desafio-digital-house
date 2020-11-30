@@ -13,12 +13,10 @@ class ImageFullActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_full)
 
-        val image = findViewById<ImageView>(R.id.imageFullscreen)
-        val thumbnail = intent.getStringExtra("COMICS_THUMBNAIl_FULL")
-
-        Picasso.get().load(thumbnail).into(image)
-
-
+        val thumbnail = intent.getStringExtra("COMICS_THUMBNAIL")
+         Picasso.get()
+                    .load(thumbnail)
+                    .into(findViewById<ImageView>(R.id.imageFullscreen))
 
         val imgClose = findViewById<ImageView>(R.id.imgClose)
         imgClose.setOnClickListener {
