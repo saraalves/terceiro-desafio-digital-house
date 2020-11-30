@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class PrecosModel(
     @SerializedName("type")
-    val tipo: String,
+    val tipo: String?,
     @SerializedName("price")
-    val preco: Float
+    val preco: Float?
 )

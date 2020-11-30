@@ -7,9 +7,4 @@ data class ImagemModel(
     val pathImagem: String,
     @SerializedName("extension")
     val extensaoImagem: String
-) {
-    fun getImagePath(imageResolution: String? = "detail"): String {
-        return "$pathImagem/$imageResolution.$extensaoImagem".replace("http://", "https://")
-    }
-}
-
+)

@@ -16,13 +16,13 @@ import com.example.marvelhq.detalhes.DetalhesActivity
 import com.example.marvelhq.home.view.adapter.PersonagemAdapter
 import com.example.marvelhq.home.viewmodel.ComicsViewModel
 import com.example.marvelhq.model.ComicsModel
+import com.example.marvelhq.model.ImagemModel
 import com.example.marvelhq.repository.MarvelRepository
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var _viewModel: ComicsViewModel
     private lateinit var _listAdapter: PersonagemAdapter
-    private lateinit var _recyclerView: RecyclerView
     private var _comics = mutableListOf<ComicsModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,30 +33,45 @@ class HomeActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
-        _listAdapter = PersonagemAdapter(_comics) {
-            val intent = Intent(this@HomeActivity, DetalhesActivity::class.java)
-            intent.putExtra("COMICS_ID", it.id)
-            intent.putExtra("COMICS_DESCRIPTION", it.descricao)
-            intent.putExtra("COMICS_TITLE", it.titulo)
-            intent.putExtra("COMICS_PAGES", it.paginacao)
-            intent.putExtra("COMICS_EDITION", it.numeroEdicao)
-            intent.putExtra("COMICS_IMAGEM", it.imagem.size)
-            intent.putExtra("COMICS_THUMBNAIL", it.thumbnail?.getImagePath())
-            intent.putExtra("COMICS_PRECO", it.precos.lastIndex)
-            startActivity(intent)
-        }
+        setupNavigation()
 
-        recyclerView.apply {
-            setHasFixedSize(true)
-            layoutManager = viewGridManager
-            adapter = _listAdapter
-        }
+        setupRecyclerView(recyclerView, viewGridManager)
 
         viewModelProvider()
         getList()
 
         showLoading(true)
-//        setScrollView()
+        setScrollView()
+    }
+
+    private fun setupRecyclerView(
+        recyclerView: RecyclerView?,
+        viewGridManager: GridLayoutManager
+    ) {
+        recyclerView?.apply {
+            setHasFixedSize(true)
+            layoutManager = viewGridManager
+            adapter = _listAdapter
+        }
+    }
+
+    private fun setupNavigation() {
+        _listAdapter = PersonagemAdapter(_comics) {
+            val intent = Intent(this@HomeActivity, DetalhesActivity::class.java)
+            with(intent) {
+                putExtra("COMICS_ID", it.id)
+                putExtra("COMICS_TITLE", it.titulo)
+                putExtra("COMICS_EDITION", it.numeroEdicao)
+                putExtra("COMICS_DESCRIPTION", it.descricao)
+                putExtra("COMICS_PAGES", it.paginacao)
+                putExtra("COMICS_DATE", it.datas.lastIndex)
+                putExtra("COMICS_PRECO", it.precos.lastIndex)
+                putExtra("COMICS_THUMBNAIL", it.thumbnail?.getImagePath())
+                putExtra("COMICS_IMAGEM", it.imagem.size)
+
+                startActivity(this)
+            }
+        }
     }
 
     private fun viewModelProvider() {
@@ -84,7 +99,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setScrollView() {
-        _recyclerView.run {
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.run {
             addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)

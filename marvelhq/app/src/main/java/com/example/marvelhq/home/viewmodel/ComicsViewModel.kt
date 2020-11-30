@@ -38,6 +38,7 @@ class ComicsViewModel(val _repository: MarvelRepository) : ViewModel() {
             emit(response.data.results)
         }
     }
+    
 
     class ComicViewModelFactory(private val _repository: MarvelRepository): ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {

@@ -25,7 +25,6 @@ class DetalhesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detalhes)
 
         val thumbnail = getDadosComics()
-
         goImageFull(thumbnail)
         viewModelProvider()
         goBack()
@@ -43,20 +42,23 @@ class DetalhesActivity : AppCompatActivity() {
 
     private fun getDadosComics(): String? {
         val id = intent.getStringExtra("COMICS_ID")
-        val descricao = intent.getStringExtra("COMICS_DESCRIPTION")
         val titulo = intent.getStringExtra("COMICS_TITLE")
-        val paginas = intent.getStringExtra("COMICS_PAGES")
         val edicao = intent.getStringExtra("COMICS_EDITION")
-        val imagem = intent.getStringExtra("COMICS_IMAGEM")
-        val thumbnail = intent.getStringExtra("COMICS_THUMBNAIL")
+        val descricao = intent.getStringExtra("COMICS_DESCRIPTION")
+        val paginas = intent.getStringExtra("COMICS_PAGES")
+        val data = intent.getStringExtra("COMICS_DATE")
         val preco = intent.getStringExtra("COMICS_PRECO")
+        val thumbnail = intent.getStringExtra("COMICS_THUMBNAIL")
+        val imagem = intent.getStringExtra("COMICS_IMAGEM")
 
 
         findViewById<TextView>(R.id.txtTitleDetalhes).text = titulo
-        findViewById<TextView>(R.id.txtDescription).text = descricao
         findViewById<TextView>(R.id.txtDataPublicacao).text = edicao
-        findViewById<TextView>(R.id.txtPriceValue).text = preco
+        findViewById<TextView>(R.id.txtDescription).text = descricao
         findViewById<TextView>(R.id.txtPagesValue).text = paginas
+        findViewById<TextView>(R.id.txtDataPublicacao).text = data
+        findViewById<TextView>(R.id.txtPriceValue).text = preco
+
 
         Picasso.get()
             .load(imagem)
