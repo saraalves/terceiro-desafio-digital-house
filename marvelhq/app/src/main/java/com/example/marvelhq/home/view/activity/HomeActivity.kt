@@ -33,7 +33,6 @@ class HomeActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
-        _comics = mutableListOf<ComicsModel>()
         _listAdapter = PersonagemAdapter(_comics) {
             val intent = Intent(this@HomeActivity, DetalhesActivity::class.java)
             intent.putExtra("COMICS_ID", it.id)

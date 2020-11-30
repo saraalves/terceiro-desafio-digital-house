@@ -9,7 +9,9 @@ import android.widget.TextView
 import android.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.example.marvelhq.R
+import com.example.marvelhq.home.view.adapter.PersonagemAdapter
 import com.example.marvelhq.home.viewmodel.ComicsViewModel
+import com.example.marvelhq.model.ComicsModel
 import com.example.marvelhq.repository.MarvelRepository
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detalhes.view.*
@@ -17,11 +19,28 @@ import kotlinx.android.synthetic.main.activity_detalhes.view.*
 class DetalhesActivity : AppCompatActivity() {
 
     private lateinit var _viewModel: ComicsViewModel
+    private lateinit var _listAdapter: PersonagemAdapter
+    private var _comics = mutableListOf<ComicsModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes)
 
+        
+        _listAdapter = PersonagemAdapter(_comics) {
+            val intent = Intent(this@DetalhesActivity, ImageFullActivity::class.java)
+            intent.putExtra("COMICS_THUMBNAIl_FULL", it.thumbnail?.getImagePath())
+            startActivity(intent)
+        }
+
+        getPersonagem()
+        viewModelProvider()
+        goBack()
+        setNavigationImageFull()
+        showLoading(false)
+    }
+
+    private fun getPersonagem() {
         val id = intent.getStringExtra("COMICS_ID")
         val descricao = intent.getStringExtra("COMICS_DESCRIPTION")
         val titulo = intent.getStringExtra("COMICS_TITLE")
@@ -45,11 +64,6 @@ class DetalhesActivity : AppCompatActivity() {
         Picasso.get()
             .load(thumbnail)
             .into(findViewById<ImageView>(R.id.imageMiniDetalhes))
-
-        viewModelProvider()
-        goBack()
-        setNavigationImageFull()
-        showLoading(false)
     }
 
     private fun viewModelProvider() {
