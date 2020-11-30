@@ -26,6 +26,24 @@ class DetalhesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes)
 
+        val thumbnail = getDadosComics()
+
+        goImageFull(thumbnail)
+        viewModelProvider()
+        goBack()
+        showLoading(false)
+    }
+
+    private fun goImageFull(thumbnail: String?) {
+        val imgThumbnail = findViewById<ImageView>(R.id.imageMiniDetalhes)
+        imgThumbnail.setOnClickListener {
+            val intent = Intent(this@DetalhesActivity, ImageFullActivity::class.java)
+            intent.putExtra("COMICS_THUMBNAIL", thumbnail)
+            startActivity(intent)
+        }
+    }
+
+    private fun getDadosComics(): String? {
         val id = intent.getStringExtra("COMICS_ID")
         val descricao = intent.getStringExtra("COMICS_DESCRIPTION")
         val titulo = intent.getStringExtra("COMICS_TITLE")
@@ -49,17 +67,7 @@ class DetalhesActivity : AppCompatActivity() {
         Picasso.get()
             .load(thumbnail)
             .into(findViewById<ImageView>(R.id.imageMiniDetalhes))
-
-        val imgThumbnail = findViewById<ImageView>(R.id.imageMiniDetalhes)
-        imgThumbnail.setOnClickListener {
-            val intent = Intent(this@DetalhesActivity, ImageFullActivity::class.java)
-            intent.putExtra("COMICS_THUMBNAIL", thumbnail)
-            startActivity(intent)
-        }
-
-        viewModelProvider()
-        goBack()
-        showLoading(false)
+        return thumbnail
     }
 
     private fun viewModelProvider() {
