@@ -17,7 +17,9 @@ import com.example.marvelhq.home.view.adapter.PersonagemAdapter
 import com.example.marvelhq.home.viewmodel.ComicsViewModel
 import com.example.marvelhq.model.ComicsModel
 import com.example.marvelhq.model.ImagemModel
+import com.example.marvelhq.model.PrecosModel
 import com.example.marvelhq.repository.MarvelRepository
+import com.google.gson.Gson
 
 class HomeActivity : AppCompatActivity() {
 

@@ -20,6 +20,6 @@ data class ComicsModel (
     @SerializedName("thumbnail")
     val thumbnail: ThumbnailModel?,
     @SerializedName("images")
-    val imagem: List<ImagemModel>
+    val imagem: List<ThumbnailModel>
 
 )
