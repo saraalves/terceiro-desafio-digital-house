@@ -59,17 +59,20 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setupNavigation() {
         _listAdapter = PersonagemAdapter(_comics) {
+
+            val datePublicacao = it.datas[0].data.toString()
+
             val intent = Intent(this@HomeActivity, DetalhesActivity::class.java)
-            with(intent) {
+            intent.apply {
                 putExtra("COMICS_ID", it.id)
                 putExtra("COMICS_TITLE", it.titulo)
                 putExtra("COMICS_EDITION", it.numeroEdicao)
                 putExtra("COMICS_DESCRIPTION", it.descricao)
                 putExtra("COMICS_PAGES", it.paginacao)
-                putExtra("COMICS_DATE", it.datas.lastIndex)
+                putExtra("COMICS_DATE", datePublicacao)
                 putExtra("COMICS_PRECO", it.precos.lastIndex)
                 putExtra("COMICS_THUMBNAIL", it.thumbnail?.getImagePath())
-                putExtra("COMICS_IMAGEM", it.imagem.size)
+                putExtra("COMICS_IMAGEM", it.imagem.lastIndex)
 
                 startActivity(this)
             }
@@ -84,11 +87,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun getList() {
-        _viewModel.getList().observe({ lifecycle }, {
+        _viewModel.getList().observe(this) {
             _comics.addAll(it)
             _listAdapter.notifyDataSetChanged()
             showLoading(false)
-        })
+        }
     }
 
     private fun showLoading(isLoading: Boolean) {

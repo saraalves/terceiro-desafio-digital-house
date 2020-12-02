@@ -1,5 +1,6 @@
 package com.example.marvelhq.detalhes
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,10 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.marvelhq.R
 import com.example.marvelhq.home.view.adapter.PersonagemAdapter
 import com.example.marvelhq.home.viewmodel.ComicsViewModel
-import com.example.marvelhq.model.ComicsModel
-import com.example.marvelhq.model.DatesModel
-import com.example.marvelhq.model.PrecosModel
-import com.example.marvelhq.model.ThumbnailModel
+import com.example.marvelhq.model.*
 import com.example.marvelhq.repository.MarvelRepository
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detalhes.view.*
@@ -44,50 +42,25 @@ class DetalhesActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getDadosComics(): String? {
         val id = intent.getStringExtra("COMICS_ID")
         val titulo = intent.getStringExtra("COMICS_TITLE")
         val descricao = intent.getStringExtra("COMICS_DESCRIPTION")
-        val paginas = intent.getStringExtra("COMICS_PAGES")
-        val dataPublicacao = intent.getStringExtra("COMICS_EDITION")
-        val preco = intent.getStringExtra("COMICS_PRECO")
+        val paginas = intent.getIntExtra("COMICS_PAGES", 0)
+        val dataPublicacao = intent.getStringExtra("COMICS_DATE")
+        val preco = intent.getFloatExtra("COMICS_PRECO", 0f)
         val thumbnail = intent.getStringExtra("COMICS_THUMBNAIL")
-        val imagem = intent.getStringExtra("COMICS_IMAGEM")
 
 
         findViewById<TextView>(R.id.txtTitleDetalhes).text = titulo
-        val txtDataPublicacao = findViewById<TextView>(R.id.txtDataPublicacao)
+        findViewById<TextView>(R.id.txtDataPublicacao).text = dataPublicacao
         val txtDescription = findViewById<TextView>(R.id.txtDescription)
-        findViewById<TextView>(R.id.txtPagesValue).text = paginas
-        val txtPriceValue = findViewById<TextView>(R.id.txtPriceValue)
-        val imageFullDetalhes = findViewById<ImageView>(R.id.imageFullDetalhes)
+        findViewById<TextView>(R.id.txtPagesValue).text = paginas.toString()
+        findViewById<TextView>(R.id.txtPriceValue).text = "$ ${preco.toString()}"
 
-        if(descricao != null){
+        if (descricao != null) {
             txtDescription.text = descricao
-        }
-        if (dataPublicacao != null){
-            for (date in dataPublicacao as List<DatesModel>){
-                var calendar = Calendar.getInstance()
-                calendar.time = date.data!!
-                txtDataPublicacao.text = calendar.getDisplayName(
-                    Calendar.MONTH,
-                    Calendar.LONG,
-                    Locale.getDefault()
-                ) + " " + calendar.get(Calendar.DAY_OF_MONTH) + ", " + calendar.get(Calendar.YEAR)
-            }
-        }
-
-        if (preco != null) {
-            txtPriceValue.text = "$ ${(preco as List<PrecosModel>)[0].preco.toString()}"
-        }
-
-        if (imagem != null) {
-            Picasso.get()
-                .load(
-                    (imagem as List<ThumbnailModel>)[(imagem as List<ThumbnailModel>).size - 1]
-                        .getImagePath("imageFullDetalhes")
-                )
-                .into(imageFullDetalhes)
         }
 
         Picasso.get().load(thumbnail).into(findViewById<ImageView>(R.id.imageMiniDetalhes))
