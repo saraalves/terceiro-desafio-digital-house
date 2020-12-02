@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface IMarvelEndpoint {
-    @GET("/v1/public/comics")
+    @GET("v1/public/characters/1009610/comics")
     suspend fun getComics(@Query("offset") offset: Int? = 0): ResponseModel<ComicsModel>
 
     companion object {
