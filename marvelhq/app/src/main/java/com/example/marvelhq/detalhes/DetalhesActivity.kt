@@ -7,16 +7,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.example.marvelhq.R
-import com.example.marvelhq.home.view.adapter.PersonagemAdapter
 import com.example.marvelhq.home.viewmodel.ComicsViewModel
-import com.example.marvelhq.model.*
 import com.example.marvelhq.repository.MarvelRepository
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_detalhes.view.*
-import java.util.*
 
 class DetalhesActivity : AppCompatActivity() {
 
@@ -57,7 +52,7 @@ class DetalhesActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.txtDataPublicacao).text = dataPublicacao
         val txtDescription = findViewById<TextView>(R.id.txtDescription)
         findViewById<TextView>(R.id.txtPagesValue).text = paginas.toString()
-        findViewById<TextView>(R.id.txtPriceValue).text = "$ ${preco.toString()}"
+        findViewById<TextView>(R.id.txtPriceValue).text = "$ $preco"
 
         if (descricao != null) {
             txtDescription.text = descricao

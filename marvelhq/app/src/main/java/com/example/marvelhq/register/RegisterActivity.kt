@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.TextView
 import com.example.marvelhq.R
 import com.example.marvelhq.home.view.activity.HomeActivity
 import com.google.android.material.appbar.MaterialToolbar

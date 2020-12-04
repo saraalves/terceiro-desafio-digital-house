@@ -67,7 +67,7 @@
                         android:layout_marginStart="@dimen/dim_20_dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="@dimen/dim_20_dp"
-                        android:hint="Name"
+                        android:hint="@string/name"
                         android:textColorHint="@color/colorPrimary"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -162,7 +162,8 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRegister"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/personCreate"
@@ -173,7 +174,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        android:contentDescription="@string/todo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

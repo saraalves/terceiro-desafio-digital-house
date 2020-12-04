@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarDetalhes"
@@ -29,7 +29,8 @@
             android:src="@drawable/spider_detalhes3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo" />
 
         <ImageView
             android:id="@+id/imageMiniDetalhes"
@@ -42,7 +43,8 @@
             tools:src="@drawable/spiderman_mini"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="@dimen/dim_20_dp"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/txtTitleDetalhes"
@@ -81,7 +83,7 @@
             android:layout_marginStart="@dimen/dim_20_dp"
             android:textColor="@color/colorWhite"
             app:layout_constraintTop_toBottomOf="@id/txtDescription"
-            android:text="Published: "/>
+            android:text="@string/published"/>
 
 
         <TextView
@@ -106,7 +108,7 @@
             android:layout_marginStart="@dimen/dim_20_dp"
             android:textColor="@color/colorWhite"
             app:layout_constraintTop_toBottomOf="@id/txtPublished"
-            android:text="Price: "/>
+            android:text="@string/price"/>
 
 
         <TextView
@@ -130,7 +132,7 @@
             android:layout_marginStart="@dimen/dim_20_dp"
             android:textColor="@color/colorWhite"
             app:layout_constraintTop_toBottomOf="@id/txtPrice"
-            android:text="Pages: "/>
+            android:text="@string/pages"/>
 
 
         <TextView

@@ -28,7 +28,8 @@
                 android:layout_height="40dp"
                 app:srcCompat="@drawable/marvel_logo"
                 android:scaleType="fitStart"
-                android:layout_marginStart="@dimen/dim_20_dp"/>
+                android:layout_marginStart="@dimen/dim_20_dp"
+                android:contentDescription="@string/todo" />
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 

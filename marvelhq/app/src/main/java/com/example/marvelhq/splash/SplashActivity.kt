@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.text.Layout
 import android.view.Window.FEATURE_NO_TITLE
-import android.widget.ImageView
 import com.example.marvelhq.R
 import com.example.marvelhq.login.LoginActivity
 

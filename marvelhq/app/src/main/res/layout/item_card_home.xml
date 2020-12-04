@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="@dimen/dim_8_dp"
     android:layout_marginEnd="@dimen/dim_8_dp"
     android:layout_marginBottom="@dimen/dim_20_dp"
     android:backgroundTint="@color/colorTransparente"
     android:orientation="horizontal"
-    app:cardElevation="0dp"
+    app:cardElevation="@dimen/dim_0_dp"
     android:clickable="true"
     android:focusable="true">
 
@@ -26,14 +27,15 @@
             android:src="@drawable/image_homem_aranha"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/txtPersonagem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_8_dp"
-            android:text="#96"
+            tools:text="#96"
             android:textColor="@color/colorGray"
             android:textSize="@dimen/dim_16_sp"
             android:textStyle="bold"

@@ -18,6 +18,7 @@
     <dimen name="dim_8_dp">8dp</dimen>
     <dimen name="dim_4_dp">4dp</dimen>
     <dimen name="dim_2_dp">2dp</dimen>
+    <dimen name="dim_0_dp">0dp</dimen>
 
 <!--    Dimens sp -->
     <dimen name="dim_36_sp">36sp</dimen>

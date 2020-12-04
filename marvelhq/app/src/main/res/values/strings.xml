@@ -16,4 +16,9 @@
         additional information such as Exif metadata which may have been added by the digital camera,
         scanner, or software program used to create or digitize it. If the file has been modified
         from its.</string>
+    <string name="published">Published:</string>
+    <string name="price">Price:</string>
+    <string name="name">Name</string>
+    <string name="pages">Pages:</string>
+    <string name="todo">TODO</string>
 </resources>

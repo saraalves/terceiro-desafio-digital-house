@@ -4,9 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.core.os.bundleOf
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
@@ -16,10 +13,7 @@ import com.example.marvelhq.detalhes.DetalhesActivity
 import com.example.marvelhq.home.view.adapter.PersonagemAdapter
 import com.example.marvelhq.home.viewmodel.ComicsViewModel
 import com.example.marvelhq.model.ComicsModel
-import com.example.marvelhq.model.ImagemModel
-import com.example.marvelhq.model.PrecosModel
 import com.example.marvelhq.repository.MarvelRepository
-import com.google.gson.Gson
 
 class HomeActivity : AppCompatActivity() {
 
